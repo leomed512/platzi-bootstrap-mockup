@@ -1,0 +1,62 @@
+Algo de lo que se uso en esta clase:
+text-right: El texto que esta dentro del elemento se corre hacia la derecha.
+text-md-right: El texto se correrá a la derecha a partir de tamaños de pantalla medianos
+text-center: el texto se alineará al centro por defecto.
+h-100: height del 100%
+offset: Corre los elementos hacia la derecha. Ejemplo:
+col-md-offset-6: Corre a partir de pantallas medianas, 6 elementos hacia la derecha.
+align-items-center: Las columnas dentro de la fila se alinean verticalmente al centro.
+**Nota: **Para poder centrar verticalmente, recordemos que la altura del container y del row ocupan su espacio mínimo, por lo que debemos apuntar a que ocupen el 100% del alto de su elemento padre (overlay), por lo que debemos ponerle un height del 100%.
+d-none: El elemento con esta clase tendrá un display: none por defecto.
+d-md-block: El elemento con esta clase añadida tendrá un display: block a partir de tamaños de pantalla medianos.
+
+Hola! Creo que Sacha se pudo haber ahorrado los estilos CSS que puso:
+
+Para la imagen ancho 100% basta con agregarle .img-fluid
+
+En la columna puede ahorrse pl-0 y pr-0 con solo ```p-0``
+
+Y, el color negro de fondo con bg-dark y pueden usar también text-light o text-white
+
+
+///tooltip
+
+se usa abbrevitations
++ tooltips
++ scripts de popper OJO NO SOBREESCRIBIR EL SCRIPT DE BOOTSTRAP 
++ script en index.js para activar el tooltip
+
+////
+
+Scrollspy --- mejora de la UX
+Al iluminar/activar ciertos elementos dependiendo de donde se encuentre navegando el usuario
+
+Se puede usar con navbar, list group o otros links
+
+##Para utilizarlo 
+
+1. Agregar |||data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" class="scrollspy-example" tabindex="0"||| al elemento donde se hará el scroll que se desea espiar, en este caso por ser la barra de navegación y recorrer todo el cuerpo de la página estos elementos se colocan en <body>.
+
+    data-bs-target apunta en donde se encuentran los elementos de navegación (que se irán activando con el scroll), en este caso navbar pero puede ser una lista etc
+
+    El id que va ahí es el del contenedor que tiene los elementos que se irán activando, no el navbar completo que incluye logo y otras cosas, sino la lista como tal. este id debe ir con numeral en el data-bs-target
+
+    data-bs-root-margin -- fija el offset con el que se van activando las secciones al hacer scroll, se va ajustando de acuerdo al tamaño de las secciones, el elemento al cual se ancla el scrollspy etc
+
+2. En los href de los links de la barra de navegación que se irán activando se deben colocar los id de las secciones a las que corresponden en el body (o elementos donde se hará scroll)
+    se debe mantener el #en el id para el href
+
+3. como el scrollspy está anclado al navbar, se debe aplicar a nav la clase fixed-top 
+
+/// Modal
+
+Para abrir ventana emergente con información o pasarelas de pago, formularios
+
+1. Se selecciona el modal a usar, se copia el html con las clases. DEBE SER FUERA DE CUALQUIER SECCION DE LA PAGINA, PERO DENTRO DEL BODY, AL FINAL
+2. Se le configura el id deseado
+3. Al botón, link etc que se vaya a anclar para gatillar el modal se le agrega |||data-bs-toggle="modal" data-bs-target="#modalCompra"||
+
+    data-bs-toggle =" modal" es por defecto
+    data-bs-target= apunta al id del motal + #
+4. Para agregar estilos adicionale y hacer combinaciones, se copia el estilo en el modal, no en el contenedor del modal.
+5. modificar contenido del modal a preferencia
